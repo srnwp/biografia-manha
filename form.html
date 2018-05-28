@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+	<title>Formulário</title>
+</head>
+<body>
+<form method="get" action="arquivo.php">
+	<fieldset>
+		<legend>Dados Pessoais</legend>
+		<label for="nome">Nome<span style="color:red">*</span>:</label>
+		<input type="text" id="nome" name="nome" maxlength="30" size="30" placeholder= "Seu nome aqui..." required autofocus />
+		<br />
+
+		<label for="sobre">Sobrenome:</label>
+		<input type="text" id="sobre" name="sobre" />
+		<br />
+
+		<label for="senha">Senha:</label>
+		<input type="password" id="senha" name="senha" />
+		<br />
+
+		<label for="dt_nasc">Data de Nascimento:</label>
+		<input type="date" id="dt_nasc" name="dt_nasc" />
+		<br />
+
+		<label for="hr_nasc">Hora de Nascimento:</label>
+		<input type="time" id="hr_nasc" name="hr_nasc" />
+		<br />
+
+		<label for="idade">Idade:</label>
+		<input type="number" id="idade" name="idade" min="18" max="120" size="3" />
+		<br />
+
+		<label for="avalia">Avaliação:</label>
+		<input type="range" id="avalia" name="avalia" min="0" max="10" value="10" />
+		<br />
+
+		<label for="cidade">Cidade:</label>
+		<select id="cidade" name="cidade">
+			<optgroup label="grandes">
+			<option value="nat">Natal</option>	
+			<option value="mos">Mossoró</option>	
+		</optgroup>
+			<optgroup label="pequenas">
+			<option value="cai">Caicó</option>	
+			<option value="cur">Curais</option>
+		</optgroup>
+	</select>
+		<fieldset>
+		<legend>Preferências:</legend>
+			<label>
+			<input type="checkbox" name="Esportes" checked />
+			Esportes
+			</label>
+			<label>
+			<input type="checkbox" name="Cinema" />
+			Cinema
+			</label>
+			<label>
+			<input type="checkbox" name="Viagens" />
+			Viagens
+			</label>
+  
+		</fieldset>
+		<fieldset>
+		<legend>Gênero:</legend>
+			<label>
+			<input type="radio" name="sexo" value="m" checked/>
+			Masculino
+			</label>
+			<label>
+			<input type="radio" name="sexo" value="f" />
+			Feminino
+			</label>
+			<label>
+			<input type="radio" name="sexo"value="o" />
+			Outro
+			</label>
+  
+		</fieldset>
+		<fieldset>
+			<label for="obs">Observações:</label><br />
+			<textarea placeholder="Sua observação aqui..." maxlength="100" cols="20" rows="5"></textarea>
+		</fieldset>
+		<p text-align="right"> <button type="submit">Cadastrar</button>
+		<button type="reset">Limpar</button> </p>
+
+</form>
+
+</body>
+</html>
