@@ -1,0 +1,19 @@
+<html>
+<script>
+	let av1 = parseFloat(prompt('Digite sua 1ª nota'));
+	let av2 = parseFloat(prompt('Digite sua 2ª nota'));
+	let av3 = parseFloat(prompt('Digite sua 3ª nota'));
+
+	media = (av1 + av2 + av3) / 3;
+
+	if (media>=7) {
+		alert('Sua média foi ' + media.toFixed(2) + ' . Você está aprovado');
+	} else if (5>=media<7) {
+		alert('Sua média foi ' + media.toFixed(2) + ' . Você está em recuperação');
+	} else {
+		alert('Sua média foi ' + media.toFixed(2) + ' . Você está reprovado');
+	}
+	
+
+</script>
+</html>

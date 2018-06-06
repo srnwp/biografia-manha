@@ -1,0 +1,13 @@
+<html>
+<script>
+let idade = parseInt(prompt('Digite sua idade'));
+
+if (idade < 16) {
+	alert ('Você ainda não pode votar');
+} else if (idade < 18 || idade >= 65) {
+	alert ('Você vota se quiser');
+} else { // não há necessidade de especificar a condição pq é a sobra
+	alert ('Você tem que votar, se não leva multa');
+}
+</script>
+</html>
