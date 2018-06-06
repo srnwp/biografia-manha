@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulário de Pesquisa Eleitoral</title>
+	<link rel="stylesheet" href="../resources/css/bootstrap.css">
+	<style type="text/css">
+		@media only screen and (max-width: 768px){
+			#menu-esquerdo{
+				display: none;
+			}
+		}
+		#cabecalho {
+		 	background-color: yellow;
+			height: 100px;
+		}
+		#menu-esquerdo{
+			background-color: lightblue;
+			height: 1100px;
+		}
+		#conteudo{
+			background-color: white;
+			height: 1100px;
+		}
+		#cabecalho{
+			border: 1px solid black;
+		}
+		#conteudo {
+			padding: 10px 15px;
+		}
+		option {
+			text-align: right;
+		}
+		
+	</style>
+		
+</head>
+<body>
+	<div id="container" class="container">
+		<div class="row">
+		<div id="cabecalho" class="col-sm-12"><br /><h1 align="center"> Pesquisa Eleitoral SENAC</h1></div>
+		</div>
+		<div class="row">
+			<div id="menu-esquerdo" class="col-md-3"></div>
+			<div id="conteudo" class="col-sm-12 col-md-9">
+				<form method="get" action="arquivo.php">
+					<fieldset>
+						<legend><h4>Dados Pessoais:</h4></legend><br />
+							<div class="form-row">
+								<div class="col-sm-3">
+									<label for="nome">Primeiro Nome<span style="color:red">*</span>:</label>
+								</div>
+								<div class="col-sm-9">
+									<input class="form-control" type="text" id="nome" name="nome" placeholder= "Seu nome aqui..." required autofocus />
+								</div>
+							</div>
+							<br />
+							<div class="form-row">
+								<div class="col-sm-3">
+									<label for="sobre">Último nome<span style="color:red">*</span>:</label>
+								</div>
+								<div class="col-sm-9">
+									<input class="form-control" type="text" id="sobre" name="sobre" placeholder= "Seu sobrenome aqui..."/>
+								</div>
+							</div>
+								<br />
+							<div class="form-row">
+								<div class="col-sm-3">
+									<label for="idade">Idade:</label>
+								</div>
+								<div class="col-sm-9">
+									<input class="form-control" type="number" id="idade" name="idade" placeholder= "Sua idade aqui..."/>
+								</div>
+							</div>
+								<br />
+							<div class="form-row">
+								<div class="col-sm-3">
+									<label for="email">E-mail:</label>
+								</div>
+								<div class="col-sm-9">
+									<input class="form-control" type="email" id="email" name="email" placeholder= "Seu email aqui..."/>
+								</div>
+							</div>
+						<br />
+						<legend><h4>Sexo:</h4></legend><br />
+							<div class="form-row">
+							<div class="col-sm-6">
+							<label>
+							<input type="radio" name="sexo" value="m" checked/>
+							Masculino
+							</label>
+							</div>
+							<div class="col-sm-6">
+							<label>
+							<input type="radio" name="sexo" value="f" />
+							Feminino
+							</label>
+						</div></div><br />
+						<br />
+						<legend><h4>Preferências:</h4></legend><br />
+							<label>
+							<input type="checkbox" name="Esportes" checked />
+							Esportes
+							</label>
+							<label>
+							<input type="checkbox" name="Cinema" />
+							Cinema
+							</label>
+							<label>
+							<input type="checkbox" name="Viagens" />
+							Viagens
+							</label>
+										
+					</fieldset>
+
+					<fieldset>
+						<p><h4>Faça sua opção:</h4></p><br />
+						<div class="form-row">
+							<div class="col-sm-3">
+								<label for="lider">Líder:</label>
+							</div>
+							<div class="col-sm-9">
+								<select class="form-control" id="lider" name="lider">
+									<option disabled selected>Vote</option>
+									<option value="gi">Gizelle</option>	
+									<option value="ca">Caroline</option>	
+									<option value="fab">Fabiano</option>	
+									<option value="hud">Hudson</option>
+									<option value="jrb">JR Bezerra</option>
+									<option value="jrn">JR Neto</option>
+									<option value="lau">Lauro</option>
+								</select>
+							</div>
+						</div>
+						<br />
+						<div class="form-row">
+							<div class="col-sm-3">
+								<label for="vlider">Vice-Líder:</label>
+							</div>
+							<div class="col-sm-9">
+								<select class="form-control" id="vlider" name="vlider">
+									<option disabled selected>Vote</option>
+									<option value="gi">Gizelle</option>	
+									<option value="ca">Caroline</option>	
+									<option value="fab">Fabiano</option>	
+									<option value="hud">Hudson</option>
+									<option value="jrb">JR Bezerra</option>
+									<option value="jrn">JR Neto</option>
+									<option value="lau">Lauro</option>
+								</select>
+							</div>
+						</div>
+						<br />
+						<div class="form-row">
+							<div class="col-sm-3">
+								<label for="sect">Secretário</label>
+							</div>
+							<div class="col-sm-9">
+								<select class="form-control" id="sect" name="sect">
+									<option disabled selected>Vote</option>
+									<option value="gi">Gizelle</option>	
+									<option value="ca">Caroline</option>	
+									<option value="fab">Fabiano</option>	
+									<option value="hud">Hudson</option>
+									<option value="jrb">JR Bezerra</option>
+									<option value="jrn">JR Neto</option>
+									<option value="lau">Lauro</option>
+								</select>
+							</div>
+						</div>
+						<br />
+						<div class="form-row">
+							<div class="col-sm-3">
+								<label for="humor">Humorista:</label>
+							</div>
+							<div class="col-sm-9">
+								<select class="form-control" id="humor" name="humor">
+									<option disabled selected>Vote</option>
+									<option value="gi">Gizelle</option>	
+									<option value="ca">Caroline</option>	
+									<option value="fab">Fabiano</option>	
+									<option value="hud">Hudson</option>
+									<option value="jrb">JR Bezerra</option>
+									<option value="jrn">JR Neto</option>
+									<option value="lau">Lauro</option>
+								</select>
+							</div>
+						</div>
+						<br />
+						<div class="form-row">
+							<div class="col-sm-3">
+								<label for="estilo">Estiloso:</label>
+							</div>
+							<div class="col-sm-9">
+								<select class="form-control" id="estilo" name="estilo">
+									<option disabled selected>Vote</option>
+									<option value="gi">Gizelle</option>	
+									<option value="ca">Caroline</option>	
+									<option value="fab">Fabiano</option>	
+									<option value="hud">Hudson</option>
+									<option value="jrb">JR Bezerra</option>
+									<option value="jrn">JR Neto</option>
+									<option value="lau">Lauro</option>
+								</select>
+							</div>
+						</div>
+						<br />
+						<div class="form-row">
+							<div class="col-sm-3">
+								<label for="timido">Tímido:</label>
+							</div>
+							<div class="col-sm-9">
+								<select class="form-control" id="timido" name="timido">
+									<option disabled selected>Vote</option>
+									<option value="gi">Gizelle</option>	
+									<option value="ca">Caroline</option>	
+									<option value="fab">Fabiano</option>	
+									<option value="hud">Hudson</option>
+									<option value="jrb">JR Bezerra</option>
+									<option value="jrn">JR Neto</option>
+									<option value="lau">Lauro</option>
+								</select>
+							</div>
+						</div>
+						<br />
+					</fieldset>
+						<fieldset>
+							<label for="obs"><h4>Observações:</h4></label><br />
+							<textarea placeholder="Sua observação aqui..." maxlength="100" cols="50" rows="5"></textarea>
+						</fieldset>
+						<p style:"text-align: right"> <button type="submit">Cadastrar</button>
+						<button type="reset">Limpar</button> </p>
+
+				</form>
+			</div>
+				
+		</div>
+		</div>
+</body>
+</html>

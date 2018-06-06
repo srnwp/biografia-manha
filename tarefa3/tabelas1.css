@@ -1,0 +1,29 @@
+table, td{
+	border: 1px solid;
+	text-align: center;
+	font-weight: bold;
+	}
+table{
+	border-collapse: collapse;
+	}
+.tab1{
+	width: 200px;
+	height: 150px;
+}
+.tab2{
+	width: 250px;
+	height: 100px;
+}
+.tab3{
+	width: 250px;
+	height: 250px;
+	}
+.tab4{
+	width: 150px;
+	border-color: white;
+	background-color: lightblue;
+}
+.tabx{
+	width: 200px;
+	height: 200px;
+}
