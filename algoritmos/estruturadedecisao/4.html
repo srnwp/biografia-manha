@@ -1,0 +1,18 @@
+<html>
+<script type="text/javascript">
+	let letra1 = prompt('Digite uma letra');
+
+	letra2 = letra1.toLowerCase();
+
+	if (letra2=='a' || letra2=='e' || letra2=='i' || letra2=='o' || letra2=='u'){
+		alert('Você digitou a vogal ' + letra1);
+	} else if(!isNaN(letra1)) {
+		alert('Você digitou um número');
+	} else {
+		alert('Você digitou a consoante ' + letra1);
+	}
+	
+	//(isNaN()) -> se o valor for um numero
+	//.toLowerCase -> para transformar as letras em minuscula
+</script>
+</html>

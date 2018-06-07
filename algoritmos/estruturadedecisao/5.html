@@ -1,0 +1,34 @@
+<html>
+<script type="text/javascript">
+	let nota1 = parseFloat(prompt('Digite sua 1ª nota'));
+	if(isNan(nota1)){
+		alert('Nota 1 deve ser um número');
+		exit();
+	}
+	nota1 = parseFloat(nota1);
+
+	let nota2 = parseFloat(prompt('Digite sua 2ª nota'));
+	if(isNan(nota2)){
+		alert('Nota 2 deve ser um número');
+		exit();
+	}
+	nota2 = parseFloat(nota2);
+
+	if(nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10) {
+    	alert('As notas devem estar entre 0 e 10');
+    	exit();
+    }
+
+	let media = (nota1 + nota2) / 2;
+
+
+	if (media == 10) {
+		alert('Sua média foi ' + media.toFixed(2) + ' . Você foi aprovado com distinção!');
+	} else if(media >= 7) {
+		alert('Sua média foi ' + media.toFixed(2) + ' . Você está aprovado!');	
+	} else {
+		alert('Sua média foi ' + media.toFixed(2) + ' . Você está reprovado!');
+	}
+		
+</script>
+</html>
