@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+//Validação do nome -> mais de 3 caracteres:
+	let ehNomeValido = false;
+	for (let i=0; !ehNomeValido; i++){
+		var nome=prompt('Digite seu nome');
+		ehNomeValido = (nome.length > 3);
+	}
+alert (nome);
+
+//Validação da idade -> de 0 a 150
+	let ehIdadeValida = false;
+	for (let i=0; !ehIdadeValida; i++){
+		var idade = parseInt(prompt('Digite sua idade'));
+		ehIdadeValida = (idade>=0 && idade <= 150);
+	}
+alert (idade);
+//Validação do sexo -> m ou f
+	let ehSexoValido = false;	
+	for (let i=0; !ehSexoValido; i++){
+		var sexo = prompt('Digite seu sexo');
+		sexo = sexo.toLowerCase();
+		ehSexoValido = (sexo=='m' || sexo=='f');
+	}
+alert (sexo);
+//Validação do salario -> maior que zero	
+	let salario = prompt('Digite seu salario');
+	
+//Validação do estado civil -> s, c , v ou d	
+	let ecivil = prompt('Digite seu estado civil');
+
+
+</script>
+</head>
+</html>

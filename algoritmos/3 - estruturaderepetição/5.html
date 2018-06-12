@@ -1,0 +1,18 @@
+<html>
+<script type="text/javascript">
+let popu_a = 80000;
+let popu_b = 200000;
+let quant_tempo = 0;
+
+var indicea = parseFloat(prompt('Informe o indice de crescimento da populaçao A em %'));
+var indiceb = parseFloat(prompt('Informe o indice de crescimento da populaçao B em %'));
+
+for (let i=0 ; popu_a < popu_b; i++){
+	popu_a = popu_a * (indicea/100+1);
+	popu_b = popu_b * (indiceb/100+1);
+	quant_tempo = i;
+	}
+alert (quant_tempo);
+
+</script>
+</html>

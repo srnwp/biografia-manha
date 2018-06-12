@@ -1,0 +1,20 @@
+<html>
+<script type="text/javascript">
+    let salario = parseFloat(prompt('Digite seu salário em reais'));
+    if (salario <= 280.00){
+        percentual = 1.2;
+        salario2 = salario * percentual;
+        } else if (salario >280.00 && salario <= 700.00){
+            percentual = 1.15;
+            salario2 = salario * percentual;
+        } else if (salario >700.00 && salario <= 1500.00){
+            percentual = 1.1;
+            salario2 = salario * percentual;
+        } else {
+            percentual = 0.5;
+            salario2 = salario * percentual;
+        }
+    let aumento = salario2 - salario
+alert ('salário antes do reajuste: ' + salario2 + '\n percentual de aumento aplicado: ' + percentual + '\n valor do aumento: ' + aumento + '\n novo salario: ': salario2 );
+</script>
+</html>
