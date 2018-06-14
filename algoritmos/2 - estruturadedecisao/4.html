@@ -12,7 +12,22 @@
 		alert('Você digitou a consoante ' + letra1);
 	}
 	
-	//(isNaN()) -> se o valor for um numero
-	//.toLowerCase -> para transformar as letras em minuscula
+	/*(isNaN()) -> se o valor for um numero
+	.toLowerCase -> para transformar as letras em minuscula
+
+	Outra possibilidade: 
+	letras[i] = prompt('Digite uma letra');
+	letra2 = letra1.toLowerCase();
+	switch (letra[i]){
+		case 'a': case 'e': case 'i': case 'o':case 'u':
+			alert('Você digitou a vogal ' + letra1);
+		default:
+		 if(!isNaN(letras[i])){
+		 	alert('Você digitou um número');
+		 }else{
+		 	alert('Você digitou a consoante ' + letra1);
+	}
+
+	 
 </script>
 </html>

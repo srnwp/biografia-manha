@@ -1,0 +1,26 @@
+<html>
+<script>
+let numeros = new Array(10);
+let pares = [];
+let impares = [];
+let index_par= 0, index_impar=0
+
+	for (let i=0; i<numeros.length; i++){
+		do {
+			numeros[i] = parseInt(prompt('Digite o numero ' + (i+1)));
+		} while (isNaN(numeros[i]));
+		let resto = numeros[i] % 2; // com % o resultado que aparece é o resto da divisão e nao o quociente
+			if(resto == 0){
+			 	pares[index_par] = numeros[i];
+			 	index_par++;
+			 }else{
+			 	impares[index_impar] = numeros[i];
+			 	index_impar++;
+			 }
+	}
+
+alert('Numeros: ' + numeros.join(', '));
+alert('Pares: ' + pares.join(', '));
+alert('Impares: ' + impares.join(', '));
+	</script>
+	</html>
