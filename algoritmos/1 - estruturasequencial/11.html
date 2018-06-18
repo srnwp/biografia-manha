@@ -4,10 +4,14 @@
 </head>
 <script>
 
-	let C = parseFloat(prompt('Informe a temperatura em graus Celsius'));
+	let nint1 = parseInt(prompt('Digite um numero inteiro'));
+	let nint2 = parseInt(prompt('Digite um numero inteiro'));
+	let nreal = parseFloat(prompt('Digite um numero real'));
+
+	op1 = 2 *nint1 * (0.5* nint2)
+	op2 = 3* nint1 + nreal
+	op3 = nreal ** 3
 	
-	F = ((9 * C)/ 5) + 32; // ou 9/5 * C + 32
-	
-	alert (C + '°C = ' + F.toFixed(2) + '°F');
+	alert ('o produto do dobro do primeiro com metade do segundo : ' + op1 + '\na soma do triplo do primeiro com o terceiro : ' + op2 + '\no terceiro elevado ao cubo : ' + op3);
 </script>
 </html>

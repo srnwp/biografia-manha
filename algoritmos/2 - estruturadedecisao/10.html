@@ -2,15 +2,16 @@
 <script type="text/javascript">
 
 let letra = prompt('Em que turno você estuda? \n M - Matutino \n V - Vespertino \n N - Noturno');
+let letra2 = letra.toUpperCase() ;
 
-switch (letra){
-	case 'M': case 'm':
+switch (letra2){
+	case 'M':
 	alert('Bom dia!');
 	break;
-	case 'V': case 'v':
+	case 'V':
 	alert('Boa tarde!');
 	break;
-	case 'N': case 'n':
+	case 'N':
 	alert('Boa noite!');
 	break;
 	default:

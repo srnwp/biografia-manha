@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<script>
+
+let a = new Array(3);
+let b = new Array(3);
+let c = new Array(3);
+
+let g = new Array(9);
+
+let index_a=0,  index_b=0,  index_c=0;
+
+for(let i=0; i<3; i++){
+	a[i] = prompt('Vetor A: ' + (i+1));
+}
+for(let i=0; i<3; i++){
+	b[i] = prompt('Vetor B: ' + (i+1));
+}
+for(let i=0; i<3; i++){
+	c[i] = prompt('Vetor C: ' + (i+1));
+}
+for(let i=0; i<9; i++){
+	if (i%3==0){
+		g[i]=a[index_a];
+		index_a++;
+	}else if (i%3==1){
+		g[i]=index_b[index_b];
+		index_b++;
+	}else {
+		g[i]=c[index_c];
+		index_c++;	
+	}
+}
+
+alert(a.join('´, ') + '\n' +
+	b.join('´, ') + '\n' +	
+	c.join('´, ') + '\n' +
+	g.join('´, '));
+
+</script>
+</html>
