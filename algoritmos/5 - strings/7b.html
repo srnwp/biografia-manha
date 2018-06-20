@@ -1,0 +1,20 @@
+<html>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+let espacos = 0, vogais = 0;
+let regex = "[aeiou]"
+let frase = prompt('Digite uma frase');
+
+for(let i=0; i<=frase.length; i++){
+	let letra = frase.toLowerCase().charAt(i);
+	if (letra==' ') {
+		espacos++;
+	} else if (letra.search(regex) != -1){
+		vogais++;
+	}
+}
+alert('A frase contém ' + espacos + ' espaços e ' + vogais + ' vogais');
+
+</script>
+</html>

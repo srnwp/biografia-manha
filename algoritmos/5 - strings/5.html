@@ -4,8 +4,8 @@
 let nome = prompt('Digite seu nome').toUpperCase();
 let nome2 = "";
 
-for (let i=0; i < nome.length; i++){
-	nome2 += nome.substr(0, i+1) + "\n";
+for (let i=nome.length; i > 0; i--){
+	nome2 += nome.substr(0, i) + "\n";
 }
 
 alert(nome2);
