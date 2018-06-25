@@ -1,0 +1,30 @@
+<html>
+<script>
+
+let ehValido = true;
+let cpf = '123.123.123-12';
+let chars = cpf.charAt(3)=='.' && cpf.charAt(7)=='.' && cpf.charAt(11)=='-';
+if (cpf.length!=14) {
+    ehValido = false;
+} else if (!chars) {
+    ehValido = false;
+} else {
+    for (let i = 0; i < 14; i++) {
+        let letra = cpf.charAt(i);
+        if (i==3 || i==7 || i==11) {
+            continue;
+        } else if (isNaN(letra)) {
+            ehValido = false;
+            break;
+        }
+    }
+}
+
+if (ehValido) {
+    alert('CPF é Válido');
+} else {
+    alert('CPF é Inválido');
+}
+
+</script>
+</html>
