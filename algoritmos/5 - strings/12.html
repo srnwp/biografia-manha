@@ -9,8 +9,8 @@ for (let i=0; i<alturas.length;i++){
     soma += alturas[i];
 }
 
-let media_altura0= (soma / 10);
-media_altura = Math.floor(media_altura0);
+let media_altura= (soma / 10);
+
 
 let j=0;
 let abaixo_media = [];
@@ -23,7 +23,7 @@ for(let i=0; i<alturas.length; i++){
 
 for (let i=0; i<j;i++){
     if (idades[abaixo_media[i]]>13){
-        alert(idades[abaixo_media[i]] + ' - ' + alturas[abaixo_media[i]] + ' - ' + media_altura);
+        alert(idades[abaixo_media[i]] + ' - ' + alturas[abaixo_media[i]] + ' - ' + media_altura.toFixed(2));
     }
 }
 </script>

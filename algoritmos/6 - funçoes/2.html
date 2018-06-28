@@ -1,0 +1,22 @@
+<html>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+let numero = parseFloat(prompt('Digite um numero'));
+
+function cascata(numero){
+    let resultado = "";
+    for (let n=0; n<=numero; n++){
+        for (let m=0; m<=n; m++) {
+            resultado += m+1 + " ";
+        }
+        resultado += "\n";
+    }
+    return resultado;
+}
+
+let resultado = cascata(numero);
+
+alert(resultado);
+</script>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+let loop==true;
+let valortotal= 0;
+let quant_prestacoes= 0;
+let valor_prestacao= 0;
+let dias_atraso= 0;
+
+function valorPagamento(valor_prestacao, dias_atraso){
+	let resultado=0;
+	if (dias_atraso<=0){
+		resultado = valor_prestacao;
+	} else {
+		resultado = valor_prestacao * 1.03 + (dias_atraso * (0.001 * valor_prestacao));
+	}
+	return resultado;
+}
+
+while(true) {
+	let valor_prestacao = parseFloat(prompt('Informe o valor da prestação'));
+	if(valor_prestacao==0){
+		break;
+	}
+	let dias_atraso = parseFloat(prompt('Informe os dias em atraso'));
+	let valorapagar= valorPagamento(valor_prestacao, dias_atraso);
+	valortotal+=valorapagar;
+	quant_prestacoes+=1;
+	alert('O valor da parcela é ' + valorapagar.toFixed(2) + ' reais');
+}
+
+alert('RELATÓRIO DO DIA:\n-Quantidade de Prestações: ' + quant_prestacoes + '\n-Valor Total: ' + valortotal.toFixed(2) + ' reais');
+
+
+</script>
+</html>
