@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<script>
+
+class Quadrado{
+	constructor(tamLado){ 
+		this._tamLado=0.0;
+	}
+	trocaLado(tamLado){
+		this._tamLado = tamLado;
+	}
+	mostraLado(){
+		return this._tamLado;
+	}
+	calculaArea(){
+		return this._tamLado **2;
+	}
+
+}
+
+let q1 = new Quadrado();
+
+console.log(q1);
+
+q1.trocaLado(3);
+
+console.log(q1);
+
+</script>
+</html>

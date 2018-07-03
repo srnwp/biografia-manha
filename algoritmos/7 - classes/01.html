@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<script>
+
+class Bola{
+	constructor(cor, circunferência, material){ 
+		this._cor= 'branco';
+		this._circunferência=2.0;
+		this._material='plastico';
+	}
+	trocaCor(cor){
+		this._cor = cor;
+	}
+	mostraCor(){
+		return this._cor;
+	}
+}
+
+let b1 = new Bola();
+
+console.log(b1);
+
+b1.trocaCor('preto');
+
+console.log(b1);
+
+</script>
+</html>
