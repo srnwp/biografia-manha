@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<script src="resp05/Conta.js"></script>
+<script>
+let novoCorrentista1 = prompt('Informe o nome do novo correntista');
+let novoNumero1 = prompt('Informe o número da nova Conta');
+let conta_corrente1 = new Conta(novoNumero1, novoCorrentista1);
+let deposito = parseFloat(prompt('Informe a quantia a ser depositada na conta'));
+
+if(conta_corrente1.depositar(deposito)){
+	alert('Depósito efetuado');
+}else{
+	alert('Depósito não pode ser negativo')
+}
+alert (conta_corrente1.toString());
+
+let conta_corrente2 = new Conta('0002', 'Carlos');
+
+if(conta_corrente1.transferir(100.0, conta_corrente2)){//o comando pode vir de dentro da condição do if
+	alert('Transferência efetuada');
+}else{
+	alert('Transferência não foi efetuada')
+}
+
+
+alert (conta_corrente1.toString() + '\n' + conta_corrente2.toString());
+
+	
+
+</script>
+</html>

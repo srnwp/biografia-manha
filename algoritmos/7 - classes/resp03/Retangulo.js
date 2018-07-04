@@ -1,7 +1,7 @@
 class Retangulo{
 	constructor(base, altura){ 
-		this._base= 3.0;
-		this._altura=2.0;
+		this._base= base;
+		this._altura=altura;
 	}
 	trocaLados(base, altura){
 		this._base= base;

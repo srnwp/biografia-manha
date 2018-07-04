@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<script src="resp03/Retangulo.js"></script>
+<script>
+let comprimento	= parseFloat(prompt('Informe o comprimento do local'));
+let largura = parseFloat(prompt('Informe a largura do local'));
+
+let largura_piso = parseFloat(prompt('largura do piso'));
+let comprimento_piso = parseFloat(prompt('comprimento do piso'));
+
+let terreno = new Retangulo(comprimento, largura);
+let piso = new Retangulo(largura_piso, comprimento_piso);
+
+alert('Area do terreno: ' + terreno.calculaArea()+ '\n'+
+	  'Area do piso: '+ piso.calculaArea() + '\n' +
+	  'Quantidade de pisos: ' + (terreno.calculaArea() / piso.calculaArea()) );
+
+</script>
+</html>
