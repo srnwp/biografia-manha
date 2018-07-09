@@ -1,0 +1,22 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<script>
+	let valorhora = parseFloat(prompt('Quanto você ganha por hora?'));
+	let quanthoras = parseFloat(prompt('Quantas horas você trabalha por mês?'));
+	let salariobruto = valorhora * quanthoras;
+	let imp_renda = (0.11 * salariobruto);
+	let inss = (0.08 * salariobruto);
+	let sindicato = (0.05 * salariobruto);
+	let salarioliquido = salariobruto - (imp_renda + inss + sindicato);
+	
+	alert ('+ Salário Bruto : R$ ' + salariobruto + 
+    '\n- IR (11%) : R$ ' + imp_renda +
+    '\n- INSS (8%) : R$ ' + inss +
+    '\n- Sindicato ( 5%) : R$ ' + sindicato +
+    '\n= Salário Liquido : R$ ' + salarioliquido);
+	
+	
+</script>
+</html>
