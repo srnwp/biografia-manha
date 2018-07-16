@@ -21,4 +21,7 @@ class Cliente extends Pessoa {
     function getCartao(){
         return $this->cartao;
     }
+    function __toString(){
+        return "nome: {$this->nome}, idade: {$this->idade}";
+    }
 }
