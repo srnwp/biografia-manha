@@ -16,14 +16,17 @@ class ContaCorrente extends Conta{
         $this->limite = $limite;
     }
     public function saca($valor){
-        $saldovirtual = parent::getSaldo() + $this->limite + self::TAXA;
-        if(is_numeric($valor) && $valor > 0 && $valor <= $saldovirtual){
+        $saldoVirtual = parent::getSaldo() + $this->limite + self::TAXA;
+        if(!is_numeric($valor)){
+            throw new Exception("valor deve ser um número");
+        }else if($valor<=0){
+            throw new Exception("valor deve ser maior que zero");
+        }else if($valor>$saldoVirtual){
+            throw new Exception("saldo insuficiente");
+        }else{
             $novosaldo = parent::getSaldo() - $valor - self::TAXA;
             parent::setSaldo($novosaldo);
-            return true;
-        }
-        return false;
-        
+        }        
     }
     public static function getQuantidadeContas(){
         return self::$qtdContas;
