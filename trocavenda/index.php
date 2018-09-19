@@ -23,9 +23,13 @@ $active = "home";
     #foto{
        width:200px;
        height:200px;
-       border: 1px solid black;
        margin: 5px 15px 5px 5px;
         }
+    #img{
+       width:200px;
+       height:200px;
+       border: 1px solid black;
+    }
     #nome{
         text-align: left;
         color: blue;
@@ -100,7 +104,7 @@ $active = "home";
                 <form method="GET" id="form_salvar">
                         <div class="form-group"><!-- input pesquisa -->
                             <input type="text" name="pesquisar" id="pesquisar" placeholder="Faça sua Pesquisa...">
-                             <button type="submit" class="btn btn-sm btn-danger" name="remover" value="remover"><i class="fas fa-search"></i></button>
+                             <button type="submit" class="btn btn-sm btn-success" name="pesquisar" value="pesquisar"><i class="fas fa-search"></i></button>
                         </div>
                 
              </fieldset>
@@ -123,10 +127,10 @@ $active = "home";
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><div id="foto"><?=$produto->getFoto();?></div></td>
+                                            <td><div id="foto"><img src="<?=$produto->getFoto();?>" id="img"/></div></td>
                                             <td colspan="2"><div><?=$produto->getDescricao();?><br/></div>
                                             <div id="preco"><h4><b><?=$produto->getPrecoFormatado();?></h4></b></div>
-                                            <div id="contatos"><b>><?=$produto->getUser()->getNome();?></b><br/>
+                                            <div id="contatos"><b><?=$produto->getUser()->getNome();?></b><br/>
                                                 Telefone: <?=$produto->getTelefone();?><br/>
                                                 Whatsapp: <?=$produto->getWhatsapp();?></div></td>
                                             

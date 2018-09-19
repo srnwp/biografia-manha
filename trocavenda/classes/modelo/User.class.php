@@ -46,7 +46,7 @@ class User {
         $this->datacad = $datacad;
     }
     public function setCidade($cidade) {
-        $this->cidade = $cidade;
+        $this->cidade = strtoupper($cidade);
     }
     public function setEstado(Estado $uf) {
         $this->estado = $uf;

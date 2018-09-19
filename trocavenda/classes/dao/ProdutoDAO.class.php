@@ -70,7 +70,7 @@ class ProdutoDAO {
             $statement->bindParam(':user', $user);
             $statement->bindParam(':id', $id);
             $statement->execute();
-            return $this->findById($produto->getId());
+            return $this->findById($produto->getIdProduto());
         } catch(PDOException $e) {
             echo $e->getMessage();
             return null;
@@ -78,7 +78,7 @@ class ProdutoDAO {
     }
     
     public function save(Produto $produto) {
-        if (is_null($produto->getId())) {
+        if (is_null($produto->getIdProduto())) {
             return $this->insert($produto);
         } else {
             return $this->update($produto);
@@ -134,8 +134,6 @@ class ProdutoDAO {
             $user = new User();
             $user->setId($row['USU_ID']);
             $user->setNome($row['USU_NOME']);
-            $user->setEstado($row['USU_EST_ID']);
-            $user->setCidade($row['USU_CIDADE']);
             $produto = new Produto();
             $produto->setIdProduto($row['PDU_ID']);
             $produto->setNomeProduto($row['PDU_NOME']);
@@ -145,7 +143,6 @@ class ProdutoDAO {
             $produto->setFoto($row['PDU_FOTO']);
             $produto->setQuant($row['PDU_QUANT']);
             $produto->setVendido($row['PDU_VENDIDO']);
-            $produto->setDataCad($row['PDU_DATACAD']);
             $produto->setPreco($row['PDU_PRECO']);
             $produto->setUser($user);
         return $produto;
@@ -158,6 +155,9 @@ class ProdutoDAO {
         $rows = $statement->fetchAll();
         $produtos = array();
         foreach ($rows as $row) {
+            $user = new User();
+            $user->setId($row['USU_ID']);
+            $user->setNome($row['USU_NOME']);
             $produto = new Produto();
             $produto->setIdProduto($row['PDU_ID']);
             $produto->setNomeProduto($row['PDU_NOME']);
@@ -168,15 +168,14 @@ class ProdutoDAO {
             $produto->setQuant($row['PDU_QUANT']);
             $produto->setVendido($row['PDU_VENDIDO']);
             $produto->setPreco($row['PDU_PRECO']);
-           
+            $produto->setUser($user);
             array_push($produtos, $produto);
         }
         return $produtos;
     }
      public function findByName($pesquisa) {
-        $sql = "SELECT * FROM TB_PRODUTOSDOSUSUARIOS LEFT JOIN TB_USUARIOS ON USU_ID=PDU_USU_ID WHERE USU_NOME='%:pesquisa%' ORDER BY PDU_DATACAD DESC";
+        $sql = "SELECT * FROM TB_PRODUTOSDOSUSUARIOS LEFT JOIN TB_USUARIOS ON USU_ID=PDU_USU_ID WHERE USU_NOME='%$pesquisa%' ORDER BY PDU_DATACAD DESC";
         $statement = $this->conexao->prepare($sql); 
-        $statement->bindParam(':pesquisa', $pesquisa);
         $statement->execute();
         $rows = $statement->fetchAll();
         $produtos = array();
@@ -184,8 +183,6 @@ class ProdutoDAO {
             $user = new User();
             $user->setId($row['USU_ID']);
             $user->setNome($row['USU_NOME']);
-            $user->setEstado($row['USU_EST_ID']);
-            $user->setCidade($row['USU_CIDADE']);
             $produto = new Produto();
             $produto->setIdProduto($row['PDU_ID']);
             $produto->setNomeProduto($row['PDU_NOME']);

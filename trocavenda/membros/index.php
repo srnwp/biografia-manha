@@ -5,11 +5,13 @@ require_once(__DIR__ . "/../classes/dao/ProdutoDAO.class.php");
 require_once(__DIR__ . "/../classes/dao/UserDAO.class.php");
 
 
+
 include(__DIR__ . "/../logado.php");
 
 $user = unserialize($_SESSION['usuario_logado']);
 
-$home = "membros/";
+$home = "../membros/";
+
 
 
 $produto = new Produto();
@@ -22,8 +24,7 @@ if (isset($_POST['remover']) && $_POST['remover'] == 'remover') {
     header("location: $home");
 }
 if (isset($_POST['salvar']) && $_POST['salvar'] == 'salvar') {
-    $produto->setNome($_POST['produto']);
-    $produto->setFoto($_POST['foto']);
+    $produto->setNomeProduto($_POST['produto']);
     $produto->setDescricao($_POST['descricao']);
     $produto->setQuant($_POST['quant']);
     $produto->setPreco($_POST['preco']);
@@ -32,7 +33,7 @@ if (isset($_POST['salvar']) && $_POST['salvar'] == 'salvar') {
     
     
     if ($_POST['id'] != '') {
-        $produto->setId($_POST['id']);
+        $produto->setIdProduto($_POST['id']);
     }
     $produtoDao->save($produto);
     header("location: $home");
@@ -68,6 +69,11 @@ $active = "membros";
         margin-top:20px; 
         width:90%;
         }
+    #img{
+       width:200px;
+       height:200px;
+       border: 1px solid black;
+    }
     </style>
 </head>
 
@@ -101,7 +107,7 @@ $active = "membros";
            
             <h2>Olá, <?=$user->getNome();?>!</h2>
             <br/>
-            
+        
             <div class="col-12"><!-- Tabela -->
                 <fieldset>
                     <legend>Seus Produtos</legend>
@@ -109,8 +115,8 @@ $active = "membros";
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Produto</th>
                                 <th>Imagem</th>
+                                <th>Produto</th>
                                 <th>Descricao</th>
                                 <th>Qtd.</th>
                                 <th>Preço</th>
@@ -122,8 +128,8 @@ $active = "membros";
                         <tbody>
                             <?php foreach($produtos as $produto): ?>
                                 <tr>
+                                    <td><img src="../<?=$produto->getFoto();?>" id="img"/></td>
                                     <td><?=$produto->getNomeProduto();?></td>
-                                    <td><?=$produto->getFoto();?></td>
                                     <td><?=$produto->getDescricao();?></td>
                                     <td><?=$produto->getQuant();?></td>
                                     <td><?=$produto->getPrecoFormatado();?></td>
@@ -149,47 +155,50 @@ $active = "membros";
             </div>  
     
     <br/>
-    
     <div class="col-12">
-                <fieldset>
-                <form method="post" id="form_salvar">
-                        <input type="hidden" name="id" value="<?=$produto->getId();?>">
-                        <div class="form-group"><!-- input produto -->
-                            <label for="produto">Nome do Produto</label>
-                            <input type="text" class="form-control" name="produto" id="produto" value="<?=$produto->getNome();?>">
-                        </div>
-                        <div class="form-group"><!-- input descricao -->
-                            <label for="descricao">Descrição</label>
-                            <input type="text" class="form-control" name="descricao" id="descricao" value="<?=$produto->getDescricao();?>">
-                        </div>
-                         <div class="form-group"><!-- input quantidade -->
-                            <label for="quant">Quantidade</label>
-                            <input type="text" class="form-control" name="quant" id="quant" value="<?=$produto->getQuant();?>">
-                        </div>
-                        <div class="form-group"><!-- input preco -->
-                            <label for="preco">Preço</label>
-                            <input type="text" class="form-control" name="preco" id="preco" value="<?=$produto->getPreco();?>">
-                        </div>
-                          <div class="form-group"><!-- input telefone -->
-                            <label for="telefone">Telefone</label>
-                            <input type="text" class="form-control" name="telefone" id="telefone" value="<?=$produto->getTelefone();?>">
-                        </div>
-                          <div class="form-group"><!-- input whatsapp -->
-                            <label for="whatsapp">Whatsapp</label>
-                            <input type="text" class="form-control" name="whatsapp" id="whatsapp" value="<?=$produto->getWhatsapp();?>">
-                        </div>
-                        <div class="form-group"><!-- button salvar -->
-                            <button type="submit" class="btn btn-primary btn-block" name="salvar" value="salvar" onclick="return confirmaSalvar();">
-                                <i class="fas fa-save"></i> Cadastrar
-                            </button>
-                        </div>
-                                            
-                    </form>
-                </fieldset>
-            </div>
-          </div> 
+            
+            <fieldset>
+            <legend>Cadastrar/Editar Produto</legend>
+            <form method="post" id="form_salvar">
+                    <input type="hidden" name="id" value="<?=$produto->getIdProduto();?>">
+                    <div class="form-group"><!-- input produto -->
+                        <label for="produto">Nome do Produto</label>
+                        <input type="text" class="form-control" name="produto" id="produto">
+                        
+                    </div>
+                    <div class="form-group"><!-- input descricao -->
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" name="descricao" id="descricao">
+                    </div>
+                     <div class="form-group"><!-- input quantidade -->
+                        <label for="quant">Quantidade</label>
+                        <input type="text" class="form-control" name="quant" id="quant">
+                    </div>
+                    <div class="form-group"><!-- input preco -->
+                        <label for="preco">Preço</label>
+                        <input type="text" class="form-control" name="preco" id="preco">
+                    </div>
+                      <div class="form-group"><!-- input telefone -->
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" name="telefone" id="telefone">
+                    </div>
+                      <div class="form-group"><!-- input whatsapp -->
+                        <label for="whatsapp">Whatsapp</label>
+                        <input type="text" class="form-control" name="whatsapp" id="whatsapp" >
+                    </div>
+                    <div class="form-group"><!-- button salvar -->
+                        <button type="submit" class="btn btn-primary btn-block" name="salvar" value="salvar" onclick="return confirmaSalvar();">
+                            <i class="fas fa-save"></i> Cadastrar
+                        </button>
+                    </div>
+                                        
+                </form>
+            </fieldset>
         </div>
     
+          </div> 
+        </div>
+            
     <script src="../assets/js/produto.js"></script>
 </body>
 </html>

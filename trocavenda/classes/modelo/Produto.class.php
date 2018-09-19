@@ -65,7 +65,7 @@ class Produto {
         $this->idproduto = $idproduto;
     }
     public function setNomeProduto($nomeproduto) {
-        $this->nomeproduto = $nomeproduto;
+        $this->nomeproduto = strtoupper($nomeproduto);
     }
     public function setTelefone($telefone) {
         $this->telefone = $telefone;
